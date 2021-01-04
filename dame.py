@@ -1,5 +1,5 @@
 from tkinter import *
-from random import *
+import random
 root = Tk()
 root.title("Jeu de Dame")
 root.geometry("600x600")
@@ -31,7 +31,7 @@ def damier():
                     can1.create_rectangle(j*case, i*case, (j*case)+case, (i*case)+case, fill='black')
             j+=1
         i+=1
-        
+# genère les pions du damier       
 def pions ():
 	i=0
 	j=0
