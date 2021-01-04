@@ -5,14 +5,12 @@ root.title("Jeu de Dame")
 root.geometry("600x600")
 
 
-can1 = Canvas(root, width =500, height =500)
+can1 = Canvas(root, width =450, height =500)
 can1.pack(side =TOP, padx =5, pady =5)
 
-can2 = Canvas(root,width = 300, height =300)
-can2.pack(side = TOP, padx =5 , pady =5)
 
 COLORS = ['red','blue']  
-case =50
+case =40
 #Dessiner un le damier 
 def damier():
     "Dessine le damier"
@@ -34,33 +32,11 @@ def damier():
         i+=1
 
 
-def pions():
-	i=0
-	j=0
-	x= random.randint(100,200) 
-	y = random.randint(100,200) 
-	while i < 10:
-		while j < 10:
-			if (i%2)==0:
-				if (j%2)==0:
-					can2.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
-					outline = random.sample(COLORS, 1)[0],width=0)
-				else :
-					can2.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
-					outline = random.sample(COLORS, 1)[0],width=0)
-			else:
-				if (j%2)==0:
-					can2.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
-					outline = random.sample(COLORS, 1)[0],width=0)
-				else :
-					can2.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
-					outline = random.sample(COLORS, 1)[0],width=0)
-			j=j+1
-		i=i+1
+b1 = Button(root, text ="Nouvelle partie ", command =damier)
+b1.pack()
 
-button = Button(root, text="jouer", command= pions).pack()
-
-# Les boutons
+b2 = Button(root, text = "QUITTER " , command =root.destroy)
+b2.pack()
 
 root.mainloop()
 
