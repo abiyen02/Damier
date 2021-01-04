@@ -2,13 +2,17 @@ from tkinter import *
 from random import *
 root = Tk()
 root.title("Jeu de Dame")
+root.geometry("600x600")
+
+
 can1 = Canvas(root, width =500, height =500)
 can1.pack(side =TOP, padx =5, pady =5)
-can2 = Canvas(root, width = 500)
-case = 50
-damier=[]
 
+can2 = Canvas(root,width = 300, height =300)
+can2.pack(side = TOP, padx =5 , pady =5)
 
+COLORS = ['red','blue']  
+case =50
 #Dessiner un le damier 
 def damier():
     "Dessine le damier"
@@ -29,7 +33,40 @@ def damier():
             j+=1
         i+=1
 
-def cercle_rouge():
+
+def pions():
+	i=0
+	j=0
+	x= random.randint(100,200) 
+	y = random.randint(100,200) 
+	while i < 10:
+		while j < 10:
+			if (i%2)==0:
+				if (j%2)==0:
+					can2.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
+					outline = random.sample(COLORS, 1)[0],width=0)
+				else :
+					can2.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
+					outline = random.sample(COLORS, 1)[0],width=0)
+			else:
+				if (j%2)==0:
+					can2.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
+					outline = random.sample(COLORS, 1)[0],width=0)
+				else :
+					can2.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
+					outline = random.sample(COLORS, 1)[0],width=0)
+			j=j+1
+		i=i+1
+
+button = Button(root, text="jouer", command= pions).pack()
+
+# Les boutons
+
+root.mainloop()
+
+
+"""
+def pions():
 	x= random.randint(0,25)
 	y = random.randint(0,25)
 	w.create_oval(x,y,x+10,y+10 , fill= "red" )
@@ -39,16 +76,10 @@ def cercle_bleu():
     x2= randon.randint(0,25)
     y2= random.randint(0,25)
     w.create_oval(x2,y2,x2+10,y2+10 , fill= "bleu" )
-
-# Les boutons
-rouge = Button(root, text='rouge', command = cercle_rouge)
-rouge.pack(side=RIGHT, padx=3, pady=3)
-
-bleu = Button(root, text='rouge', command = cercle_rouge)
-bleu.pack(side=RIGHT, padx=3, pady=3)
+    b3.pack(side =BOTTOM,padx =3, pady =3)
+	button = Button(root, text='button', command = pions)
+button.pack()
 
 b3 = Button(root, text ='Quitter', command =root.destroy)
-b3.pack(side =BOTTOM,padx =3, pady =3)
-b4 = Button(root, text ='Nouvelle Partie', command =damier)
-b4.pack(side =BOTTOM,padx =3, pady =3)
-root.mainloop()
+b3.pack()
+"""
