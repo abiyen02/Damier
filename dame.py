@@ -11,6 +11,7 @@ can1.pack(side =TOP, padx =5, pady =5)
 
 COLORS = ['red','blue']  
 case =40
+
 #Dessiner un le damier 
 def damier():
     "Dessine le damier"
@@ -59,10 +60,10 @@ button = Button(root, text="jouer", command= pions)
 button.pack()
 
 b1 = Button(root, text ="Nouvelle partie ", command =damier)
-b1.pack()
+b1.pack(side=LEFT)
 
 b2 = Button(root, text = "QUITTER " , command =root.destroy)
-b2.pack()
+b2.pack(side= RIGHT)
 
 root.mainloop()
 
