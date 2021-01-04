@@ -1,3 +1,4 @@
+from tkinter import *
 import tkinter as tk
 
 """nouvelle fenetre pour importer le jeu """

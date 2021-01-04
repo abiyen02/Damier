@@ -35,12 +35,18 @@ def damier():
 def pions ():
 	i=0
 	j=0
+<<<<<<< HEAD
 	x= random.randint(100,400) 
 	y = random.randint(100,400) 
+=======
+	x= random.randint(50,400) 
+	y = random.randint(50,400) 
+>>>>>>> 97b262e68ab46577b93f71ab97d19f35069713bb
 	while i < 10:
 		while j < 10:
 			if (i%2)==0:
 				if (j%2)==0:
+<<<<<<< HEAD
 					can1.create_oval(x,y,x+40,y+40,fill=(random.sample(COLORS, 1)[0]), 
 					outline = random.sample(COLORS, 1)[0],width=0)
 				else :
@@ -52,6 +58,19 @@ def pions ():
 					outline = random.sample(COLORS, 1)[0],width=0)
 				else :
 					can1.create_oval(x,y,x+40,y+40,fill=(random.sample(COLORS, 1)[0]), 
+=======
+					can1.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
+					outline = random.sample(COLORS, 1)[0],width=0)
+				else :
+					can1.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
+					outline = random.sample(COLORS, 1)[0],width=0)
+			else:
+				if (j%2)==0:
+					can1.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
+					outline = random.sample(COLORS, 1)[0],width=0)
+				else :
+					can1.create_oval(x,y,x+20,y+20,fill=(random.sample(COLORS, 1)[0]), 
+>>>>>>> 97b262e68ab46577b93f71ab97d19f35069713bb
 					outline = random.sample(COLORS, 1)[0],width=0)
 			j=j+1
 		i=i+1
